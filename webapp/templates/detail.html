@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ task.title }}</h1>
+<p>{{ task.description }}</p>
+<a href="{% url 'update' pk=task.pk %}"><i class="bi bi-pencil-square"></i></a>
+<a href="{% url 'delete' pk=task.pk%}"><i class="bi bi-trash3"></i></a>
+{% endblock content %}
