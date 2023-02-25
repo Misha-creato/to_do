@@ -1,7 +1,10 @@
-# from django.conf import settings
+# Django
 from django.urls import path
+
+# Local
 from . import views
-# from django.conf.urls.static import static
+
+
 app_name = 'accounts'
 
 urlpatterns = [
@@ -9,4 +12,3 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
 ]
-
