@@ -1,7 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base_webapp.html' %}
 {% block content %}
-<h1>{{ task.title }}</h1>
-<p>{{ task.description }}</p>
-<a href="{% url 'update' pk=task.pk %}"><i class="bi bi-pencil-square"></i></a>
-<a href="{% url 'delete' pk=task.pk%}"><i class="bi bi-trash3"></i></a>
+<div class="container">
+    <div class="card">
+        <h5 class="card-header">{{task.title}}</h5>
+        <div class="card-body">
+            <p class="card-text">{{task.description}}</p>
+            <p>Category: {{task.category}}</p>
+            <a href="{% url 'update' pk=task.pk %}"><i class="bi bi-pencil-square"></i></a>
+            <a href="{% url 'delete' pk=task.pk%}"><i class="bi bi-trash3"></i></a>
+        </div>
+
+</div>
+</div>
 {% endblock content %}

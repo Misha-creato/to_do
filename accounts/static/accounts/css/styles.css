@@ -1,0 +1,28 @@
+.gradient-custom {
+    background: linear-gradient(90deg, rgba(112,39,107,1) 0%, rgba(162,92,157,1) 29%, rgba(186,114,133,1) 57%, rgba(255,177,0,1) 100%, transparent);
+
+}
+
+.custom-image {
+    background-image: url('../images/unicorn_img-removebg-preview.png');
+    background-repeat: round;
+}
+
+.gradient-custom-4 {
+  
+    background: linear-gradient(90deg, rgba(112,39,107,1) 0%, rgba(162,92,157,1) 29%, rgba(186,114,133,1) 57%, rgba(255,177,0,1) 100%);
+}
+
+.form-control::-webkit-input-placeholder {
+    opacity: 0.7;
+    font-size: 17px;
+}
+
+i {
+    color: rgb(224, 36, 208);
+}
+
+.form-control:focus {
+    border-color: rgb(224, 36, 208);
+    box-shadow: 10px 10px 10px rgb(224, 36, 208);
+}

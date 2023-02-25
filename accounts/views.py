@@ -16,7 +16,7 @@ def register_view(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, 'Created account for user ' + username)
-            return redirect('login')
+            return redirect('accounts:login')
         else:   
             messages.error(request, form.errors)
 
@@ -52,7 +52,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request=request)
-    return redirect('login')
+    return redirect('accounts:login')
 
 
 

@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-{% block form %}
-<form method='POST' action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value='Save'>
-</form>
-{% endblock form %}
+{% extends 'base_webapp.html' %}
+{% block content %}
+{% include 'partial/form.html' with title='EDIT TASK' btn_title='SAVE' task_title=form.title.value task_descr=form.description.value%}
+{% endblock content %}

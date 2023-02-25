@@ -1,9 +1,43 @@
-{% extends 'base.html' %}
-{% block form %}
+{% extends 'base_webapp.html' %}
+{% comment %} {% block form %}
 <form method='POST' action="">
     {% csrf_token %}
     <p>Are you sure you want to delete task <b>{{task.title}}</b>?</p>
     <input type="submit" value='Delete'>
     <a href="{% url 'index' %}">Cancel</a>
 </form>
-{% endblock form %}
+{% endblock form %} {% endcomment %}
+
+{% block content %}
+<div class="mask d-flex align-items-center h-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              {% comment %} <h2 class="text-uppercase text-center mb-5">
+                {{ title }}
+              </h2> {% endcomment %}
+              
+              <form method='POST', action="">
+              
+                {% csrf_token %} 
+                <p>Are you sure you want to delete task <b>{{task.title}}</b>?</p>
+                  
+              
+                  <div class="d-flex justify-content-around">
+                    <button type="submit" class="btn btn-success col-md-3 gradient-custom border-0">DELETE</button>
+                    <a class='custom-link' href="{% url 'index' %}">CANCEL</a>
+                  </div>
+              
+                    
+              </form>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}

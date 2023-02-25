@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-{% block form %}
-<form method='POST' action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value='Create'>
-</form>
-{% endblock form %}
+{% extends 'base_webapp.html' %}
+{% block content %}
+{% include 'partial/form.html' with title='CREATE NEW TASK' btn_title='CREATE' categories=categories category_form=category_form%}
+{% endblock content %}

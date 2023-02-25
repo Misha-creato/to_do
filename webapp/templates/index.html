@@ -1,17 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base_webapp.html' %}
+{% comment %} {% block title %}Your tasks{% endblock title %} {% endcomment %}
 {% block content %}
+<div class="card-group">
 {% for task in tasks %}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">{{ task.title }}</h5>
         <p class="card-text">{{ task.description }}</p>
-        <h1>Your tasks:</h1>
         <a href="{% url 'update' pk=task.pk %}"><i class="bi bi-pencil-square"></i></a>
         <a href="{% url 'delete' pk=task.pk %}"><i class="bi bi-trash3"></i></a>
         <a href="{% url 'detail' pk=task.pk %}"><i class="bi bi-eye"></i></a>
         </div>
     </div>
 {% endfor %}
+</div>
 {% endblock content %}
 <h1>Hello {{ user.username }}</h1>
 <a href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i></a>
